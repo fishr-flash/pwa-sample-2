@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My PWA App</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <h1>Hello from PWA!</h1>
+  <p>This is a minimal Progressive Web App.</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.log('Service worker registered', reg))
+        .catch(err => console.error('Service worker registration failed:', err));
+    }
+  </script>
+</body>
+</html>
